@@ -1,12 +1,12 @@
 var express = require('express');
+var fs = require('fs')
 
 var app = express.createServer(express.logger());
 
-var buff = new Buffer(20);
-
 fs.readFile('index.html'), function (err, buff) {
-  if (err) throw err;
-  console.log(buff);
+  if (err) {
+    console.log(buff);
+  }
 });
 
 app.get('/', function(request, response) {
