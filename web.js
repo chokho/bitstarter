@@ -6,11 +6,11 @@ var buff = new Buffer(20);
 
 fs.readFile('index.html'), function (err, buff) {
   if (err) throw err;
-  console.log(data);
+  console.log(buff);
 });
 
 app.get('/', function(request, response) {
-  response.send(data);
+  response.send(buff);
 });
 
 var port = process.env.PORT || 5000;
